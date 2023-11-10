@@ -1,0 +1,56 @@
+a * {
+*cursor: pointer;
+}
+.home-filter-search {
+*zoom: 1;
+}
+.home-filter-search select {
+*position: relative;
+*top: 2px;
+}
+.header-info-list em {
+	_width: 16px;
+	_white-space: nowrap;
+}
+.feed-pic {
+*top: -12px;
+}
+.feed-pic-shadow {
+*display: none;
+}
+.feed-relation {
+	_visibility: visible;
+}
+.update-browser {
+	left: 0;
+	position: absolute;
+	top: 0;
+}
+.header {
+	_float: left;
+	_margin-top: 26px;
+	_width: 100%;
+}
+.footer {
+	_width: 100%;
+	_float: left;
+}
+.footer-partnerList dt {
+	_display: inline;
+}
+.footer-partnerList dd {
+	_display: inline;
+*white-space: nowrap;
+}
+.ie8 .letter-template-default textarea {
+	background: #E4F7FE;
+}
+.ie8 .letter-template-past textarea {
+	background: #8285B1;
+}
+.ie8 .letter-template-xiaoshipian textarea {
+	background: #FFF;
+}
+.ie8 .letter-template-unbosom textarea {
+	background: #FFF;
+}

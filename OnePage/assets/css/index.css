@@ -1,0 +1,450 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    font-family: "Helvetica", "Arial", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+ul li {
+    list-style: none;
+}
+
+.body {
+    width: 100%;
+    height: 100%;
+}
+
+.background {
+    -webkit-filter: brightness(0.6);
+    -ms-filter: brightness(0.6);
+    -moz-filter: brightness(0.6);
+    filter: brightness(0.6);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: url(../images/aniya6.jpg) center no-repeat;
+    background-size: cover;
+}
+
+@media screen and (max-width: 900px) {
+    .background {
+        background: #fff url(../images/1.jpg) no-repeat fixed center top/ cover;
+    }
+
+    .captcha-li {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .ipad-hidden {
+        display: none;
+    }
+
+    .header .nav {
+        margin-right: 1px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .captcha-mobile {
+        display: block !important;
+    }
+    .captcha-li {
+        display: none;
+    }
+    .contact-block#captcha {
+        width: calc(100% - 20px) !important;
+    }
+    .background {
+        background: url(../images/mobile-2.jpg) no-repeat center top/ cover;
+        /*-webkit-filter: brightness(0.8);*/
+        /*-ms-filter: brightness(0.8);*/
+        /*-moz-filter: brightness(0.8);*/
+    }
+
+    .hitokoto-content {
+        margin-top: 23vh !important;
+    }
+
+    .header .nav-left {
+        margin-right: 1px;
+    }
+
+    .header .nav {
+        margin-right: 1px;
+    }
+
+    html, body {
+        font-size: 11px;
+    }
+
+    #contact {
+        width: 300px;
+        height: 550px;
+    }
+
+    #contact .bottom {
+        font-size: 13px;
+        overflow: hidden;
+    }
+
+    .captcha-iframe #document{
+        overflow: hidden;
+    }
+    /*.header li {*/
+    /*    padding: 0 6px !important;*/
+    /*}*/
+    .nav li.nav-last {
+        display: block;
+    }
+
+    .nav-left h1 {
+        font-size: 18px !important;
+    }
+
+    #hitokoto_author {
+        font-size: 16px;
+    }
+
+    #audio-btn {
+        font-size: 60px !important;
+    }
+
+    .mobile-hidden {
+        display: none !important;
+    }
+
+    .font-size-max {
+        font-size: 20px !important;
+    }
+
+    .font-size-min {
+        font-size: 18px !important;
+    }
+    #head-btn:after {
+        content: "点我";
+        position: relative;
+        left: -29px;
+        top: 12px;
+    }
+}
+
+.font-size-max {
+    font-size: 30px;
+}
+
+.font-size-min {
+    font-size: 20px;
+}
+
+.content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* header */
+.header {
+    background-color: transparent;
+    box-shadow: none;
+    width: 100%;
+    height: 64px;
+}
+
+.header ul {
+    display: inline-block;
+    margin-right: 50px;
+}
+
+.header .nav {
+    float: right;
+}
+
+.header .nav-left {
+    float: left;
+}
+
+.nav-left h1 {
+    font-weight: 400;
+    font-size: 23px;
+    display: inline-block;
+}
+
+.header li {
+    float: left;
+    line-height: 64px;
+    padding: 0 24px;
+}
+
+.header li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    opacity: .87;
+}
+
+a {
+    text-decoration: none;
+}
+
+.head {
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    margin-top: 17px;
+    margin-left: 0;
+}
+
+.hitokoto-content {
+    position: relative;
+    color: white;
+    z-index: 1;
+    margin-top: 35vh;
+    margin-bottom: 35vh;
+    margin-left: auto;
+    margin-right: auto;
+    width: 55%;
+    font-size: 2.3rem;
+    text-align: center;
+    line-height: 50px;
+    word-break: normal;
+    padding: 15px 50px;
+    font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+}
+
+.font-style {
+    font-size: 2.3rem;
+    word-break: normal;
+    font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    opacity: .87;
+}
+
+.hitokoto-content .bracket.left {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.hitokoto-content .bracket.right {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.hitokoto-content .author {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    float: right;
+    margin-top: 40px;
+}
+
+/* 联系 */
+.contact-block {
+    width: 930px;
+    height: 640px;
+    margin: 0 auto;
+    position: relative;
+    top: 50px;
+    z-index: 233;
+    display: none;
+    box-shadow: 0 0.3px 0.7px rgb(0 0 0 / 13%), 0 0.9px 1.7px rgb(0 0 0 / 18%), 0 1.8px 3.5px rgb(0 0 0 / 22%), 0 3.7px 7.3px rgb(0 0 0 / 28%), 0 10px 20px rgb(0 0 0 / 40%);
+    backdrop-filter: blur(20px);
+    transition: 0.5s ease;
+}
+
+.contact-block:hover {
+    box-shadow: 0 0.7px 1px rgb(0 0 0 / 16%), 0 1.7px 2.6px rgb(0 0 0 / 22%), 0 3.5px 5.3px rgb(0 0 0 / 28%), 0 7.3px 11px rgb(0 0 0 / 35%), 0 20px 30px rgb(0 0 0 / 50%);
+}
+
+.contact-block .contact-close {
+    display: inline-block;
+    float: right;
+    position: relative;
+    right: 11px;
+}
+
+.contact-block .contact-close:hover {
+    cursor: pointer
+}
+
+.contact-block ul {
+    width: 100%;
+    height: 100%;
+}
+
+.contact-block .top {
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    background: rgba(233, 233, 233, .5);
+}
+
+.contact-block .bottom {
+    box-sizing: border-box;
+    height: calc(100% - 40px);
+    background: rgba(233, 233, 233, .3);
+    text-align: left;
+    padding: 50px 50px;
+}
+
+.contact-block .bottom {
+    line-height: 25px;
+    font-size: 20px;
+    font-weight: 3;
+}
+
+.footer {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+}
+
+#audio-btn:hover {
+    cursor: pointer
+}
+
+#audio-btn {
+    font-size: 80px;
+    color: #707070;
+}
+
+/* layout */
+.layout {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    width: 240px;
+    height: 100%;
+    max-height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+    box-sizing: border-box;
+    border-right: 1px solid #e0e0e0;
+    background: #fafafa;
+    -webkit-transform: translateX(-250px);
+    transform: translateX(-250px);
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    will-change: transform;
+    transition-duration: .2s;
+    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+    transition-property: transform;
+    transition-property: transform, -webkit-transform;
+    color: #424242;
+    overflow: visible;
+    overflow-y: auto;
+    z-index: 5;
+}
+
+.layout-mask {
+    pointer-events: auto;
+    opacity: 1;
+    background-color: rgba(0, 0, 0, .5);
+    transition-property: opacity;
+    visibility: visible;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 4;
+    visibility: hidden;
+    transition-property: background-color;
+    transition-duration: .2s;
+    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+}
+
+.layout-header {
+    line-height: 56px;
+    padding-left: 16px;
+    letter-spacing: .02em;
+    font-weight: 400;
+    box-sizing: border-box;
+    position: relative;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-size: 20px;
+    color: #424242;
+    opacity: .87;
+}
+
+.layout-header a {
+    font-size: 20px;
+    color: #424242;
+    opacity: .87;
+}
+
+.layout-ul {
+    padding-top: 16px;
+}
+
+.layout-ul-li {
+    padding: 16px 40px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    display: block;
+}
+
+.layout-link {
+    color: #757575;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 1024px) {
+    .layout-ul-li {
+        padding: 16px;
+    }
+}
+
+.layout-ul-li:hover {
+    cursor: pointer;
+    background-color: #e0e0e0;
+}
+
+.beian {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    z-index: 99;
+    color: white;
+}
+
+.beian a {
+    color: white;
+}
+
+.contact-block#captcha {
+    width: 500px;
+
+}
+.contact-block#captcha .bottom {
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+}
+
+.captcha-mobile {
+    margin-right: -40px;
+    display: none;
+}

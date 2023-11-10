@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>个人笔记</title>
+    <link rel="stylesheet" href="assets/css/iconfont.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+
+    <!-- <link rel="stylesheet" type="text/css" href="assets/css/snow.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="assets/css/deng.css"> -->
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="assets/css/tianai-captcha.css"> -->
+</head>
+<body>
+<div class="background"></div>
+<div class="content">
+    <div class="header">
+        <ul class="nav-left">
+            <li>
+                <a href="javascript:;" class="layout-start-link" id="head-btn"><img class="head" src="https://gravatar.com/avatar/f5f18046ddfc27e1ede67459b242c42e"/></a>
+            </li>
+            <li class="nav-left-last mobile-hidden">
+                <h1><a href="https://www.lopins.cn" class="layout-start-link">吴罗平</a></h1>
+            </li>
+        </ul>
+        <ul class="nav">
+            <li class="captcha-mobile"><a href="https://www.lopins.cn" class="captcha-btn" >官方网站<span
+                    class="iconfont font-size-min">&#xe61e;</span></a></li>
+            <li><a href="javascript:;">官网网站<!--<span class="iconfont font-size-max">&#xe600;</span>--></a></li>
+            <li class="captcha-li"><a href="#" class="captcha-btn" >在线体验<!--<span
+                    class="iconfont font-size-min">&#xe61e;</span>--></a></li>
+            <li class="mobile-hidden"><a href="https://github.com/Lopins">开源仓库<!--<span class="iconfont font-size-min">&#xe61e;</span>--></a>
+            </li>
+            <li class="nav-last ipad-hidden mobile-hidden"><a href="#" class="contact-btn">关于我们</a>
+            </li>
+        </ul>
+    </div>
+    <div id="hitokoto" class="hitokoto-content">
+        <div class="bracket left">『</div>
+        <div class="word" id="hitokoto_text"></div>
+        <div class="bracket right">』</div>
+        <div class="author" id="hitokoto_author"></div>
+    </div>
+
+    <div class="footer">
+        <span class="iconfont" id="audio-btn">&#xe67d;</span>
+        <audio preload autoplay="autoplay" loop="loop" id="bgm-audio">
+            <source src="https://api.uomg.com/api/rand.music?sort=热歌榜&format=mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <!-- 左侧导航 -->
+    <div class="layout">
+        <div class="layout-header">
+            <a href="https://www.lopins.cn">吴罗平</a>
+        </div>
+        <ul class="layout-ul">
+            <li class="layout-ul-li layout-link">音乐开关在左下角哦<span class="iconfont font-size-max">&#xe600;</span></li>
+            <a href="#" class="captcha-btn"  >
+                <li class="layout-ul-li layout-link">在线体验<span class="iconfont font-size-min">&#xe61e;</span></li>
+            </a>
+            <a class="layout-link" href="https://github.com/Lopins">
+                <li class="layout-ul-li">开源仓库<span class="iconfont font-size-min">&#xe61e;</span></li>
+            </a>
+            <li class="layout-ul-li layout-link contact-btn">关于我们</li>
+            <a class="layout-link" href="#">
+                <li class="layout-ul-li">------回忆长廊------</span></li>
+            </a>
+            <a class="layout-link" href="https://www.lopins.cn/?ref=github.com/Lopins">
+                <li class="layout-ul-li">先鉴(2018-2-9)<span class="iconfont font-size-min">&#xe61e;</span></li>
+            </a>
+        </ul>
+    </div>
+    <div class="layout-mask"></div>
+    <div class="beian">
+        COPYRIGHT ©2019-2023 楚莺信息 版权所有 <a href="https://beian.miit.gov.cn/" rel="external nofollow" target="_blank">沪ICP备19048180号</a>
+    </div>
+</div>
+<div class="contact-parent">
+    <div class="contact-block" id="contact">
+        <ul>
+            <li class="top font-style">吴罗平<span class="contact-close contact-btn">X</span></li>
+            <li class="bottom font-style">
+                你好ya， 我是 吴罗平.<br/><br/>
+                这是我的个人网站.<br/><br/>
+                我是一名业余的程序爱好者，喜欢: 唱、跳、rap、篮球.<br/><br/>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="contact-parent">
+    <div class="contact-block" id="captcha">
+        <ul>
+            <li class="top font-style">在线体验<span class="contact-close captcha-btn">X</span></li>
+            <li class="bottom font-style">
+                <span>在线演示:</span>
+                <div id="captcha-div"></div>
+                <span>更多系方式。。。</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="plugin">
+    <!--
+    <div class="deng-long-right">
+        灯笼1
+        <div class="deng-box">
+            <div class="deng">
+                <div class="xian"></div>
+                <div class="deng-a">
+                    <div class="deng-b">
+                        <div class="deng-t">节</div>
+                    </div>
+                </div>
+                <div class="shui shui-a">
+                    <div class="shui-c"></div>
+                    <div class="shui-b"></div>
+                </div>
+            </div>
+        </div>
+
+        灯笼2
+        <div class="deng-box1">
+            <div class="deng">
+                <div class="xian"></div>
+                <div class="deng-a">
+                    <div class="deng-b">
+                        <div class="deng-t">春</div>
+                    </div>
+                </div>
+                <div class="shui shui-a">
+                    <div class="shui-c"></div>
+                    <div class="shui-b"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    -->
+    <!--
+    <canvas id="Snow"></canvas>
+    <div class="snow-accumulated"></div>
+    -->
+</div> 
+
+
+<script src="assets/js/jquery.min.js"></script>
+<!-- <script src="assets/js/base64.js"></script> -->
+<!-- <script src="assets/js/tianai-captcha.min.js"></script> -->
+<script src="assets/js/index.js"></script>
+<!-- <script src="assets/js/snow.js"></script> -->
+</body>
+</html>

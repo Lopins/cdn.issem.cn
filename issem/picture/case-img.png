@@ -1,0 +1,278 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+  <title>出错了-途阔营销</title>
+  <link rel="stylesheet" href="/css/public.css">
+  <link rel="stylesheet" type="text/css" href="/css/404.css" />
+		<link rel="stylesheet" type="text/css" href="/assets/css/comm/reset.css" />
+		<link rel="stylesheet" type="text/css" href="/assets/css/comm/global.css?v=1699535732" />
+		<link rel="stylesheet" type="text/css" href="/assets/css/comm/header.css?v=1699535732" />
+		<link rel="stylesheet" type="text/css" href="/assets/css/comm/footer.css?v=1699535732" />
+		<link rel="stylesheet" type="text/css" href="/assets/css/comm/menus.css?v=1699535732" />
+		<link rel="stylesheet" type="text/css" href="/assets/css/pages.css?v=1699535732" />
+</head>
+
+<body>
+<!--头部开始-->
+<header class="header">
+	<div class="burger-bg burger-bg-active">
+		<div class="burger-logo">
+			<a href="/"><img src="/assets/images/logo.svg"></a>
+		</div>
+		<div class="close-burger">
+			<span></span>
+			<span></span>
+		</div>
+		<div class="burger-scroll">
+			<div class="burger-nav">
+				<ul class="burger-nav-lists">
+					<li class="{dede:field name='typeid' runphp='yes'} if(@me=='') @me='on'; else @me=''; {/dede:field}"><a href="/">首页</a></li>
+					<li class="{dede:field name='typeid' runphp='yes'} if(@me==17) @me='on'; else @me=''; {/dede:field}"><a href="/seo">SEO服务</a></li>
+					<li class="{dede:field name='typeid' runphp='yes'} if(@me==19) @me='on'; else @me=''; {/dede:field}"><a href="/smo">品牌维护</a></li>
+					<li class="{dede:field name='typeid' runphp='yes'} if(@me==20) @me='on'; else @me=''; {/dede:field}">
+						<a href="/sem">广告投放</a>
+					</li>
+					<li class="{dede:field name='typeid' runphp='yes'} if(@me==22||@me==39||@me==42||@me==44||@me==45) @me='on'; else @me=''; {/dede:field}">
+						<a href="javascript:void(0);">新媒体营销</a>
+						<div class="burger-nav-f1">
+							<ul>
+								<li><a href="/xiao">小红书营销</a></li>
+								<li><a href="/video">短视频营销</a></li>
+								<li><a href="/app">APP营销</a></li>
+								<li><a href="/zhihu">知乎营销</a></li>
+								<li><a href="/wechat">微信营销</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="{dede:field name='typeid' runphp='yes'} if(@me==18||@me==33||@me==34||@me==35||@me==36||@me==37||@me==38||@me==40||@me==43||@me==46||@me==47) @me='on'; else @me=''; {/dede:field}">
+						<a href="/news">新闻中心</a>
+						<div class="burger-nav-f1">
+							<ul>
+								<li><a href="/info">行业资讯</a></li>
+								<li><a href="/seonews">SEO资讯</a></li>
+								<li><a href="/smonews">品牌资讯</a></li>
+								<li><a href="/semnews">广告投放资讯</a></li>
+								<li><a href="/appnews">APP营销资讯</a></li>
+								<li><a href="/xiaonews">小红书营销资讯</a></li>
+								<li><a href="/zhihunews">知乎营销资讯</a></li>
+								<li><a href="/videonews">短视频营销资讯</a></li>
+								<li><a href="/wechatnews">微信营销资讯</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="{dede:field name='typeid' runphp='yes'} if(@me==51) @me='on'; else @me=''; {/dede:field}"><a target="_blank" href="https://www.tukuo.com.cn/cooperation/">合作案例</a></li>
+					<li><a target="_blank" href="https://www.tukuo.com.cn/">途阔主站</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</header>
+<!--移动端的导航-->
+<!-- mobile -->
+<div class="header">
+	<div class="flex header-wrap">
+		<div class="flex header-left">
+			<a href="/" class="header-logo"><img src="/assets/images/logo.svg" alt=""></a>
+			<div class="navigation">
+				<ul class="flex">
+					<li class="{dede:field name='typeid' runphp='yes'} if(@me=='') @me='on'; else @me=''; {/dede:field}"><a href="/">首页</a></li>
+					<li class="{dede:field name='typeid' runphp='yes'} if(@me==17) @me='on'; else @me=''; {/dede:field}"><a href="/seo">SEO服务</a></li>
+					<li class="{dede:field name='typeid' runphp='yes'} if(@me==19) @me='on'; else @me=''; {/dede:field}"><a href="/smo">品牌维护</a></li>
+					<li class="{dede:field name='typeid' runphp='yes'} if(@me==20) @me='on'; else @me=''; {/dede:field}"><a href="/sem">广告投放</a></li>
+					<li class="{dede:field name='typeid' runphp='yes'} if(@me==22||@me==39||@me==42||@me==44||@me==45) @me='on'; else @me=''; {/dede:field}">
+						<a href="javascript:void(0);">新媒体营销</a>
+						<div class="navigation-f1">
+							<ul>
+								<li><a href="/xiao">小红书营销</a></li>
+								<li><a href="/video">短视频营销</a></li>
+								<li><a href="/app">APP营销</a></li>
+								<li><a href="/zhihu">知乎营销</a></li>
+								<li><a href="/wechat">微信营销</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="{dede:field name='typeid' runphp='yes'} if(@me==18||@me==33||@me==34||@me==35||@me==36||@me==37||@me==38||@me==40||@me==43||@me==46||@me==47) @me='on'; else @me=''; {/dede:field}">
+						<a href="/news">新闻中心</a>
+						<div class="navigation-f1">
+							<ul>
+								<li><a href="/info">行业资讯</a></li>
+								<li><a href="/seonews">SEO资讯</a></li>
+								<li><a href="/smonews">品牌资讯</a></li>
+								<li><a href="/semnews">广告投放资讯</a></li>
+								<li><a href="/appnews">APP营销资讯</a></li>
+								<li><a href="/xiaonews">小红书营销资讯</a></li>
+								<li><a href="/zhihunews">知乎营销资讯</a></li>
+								<li><a href="/videonews">短视频营销资讯</a></li>
+								<li><a href="/wechatnews">微信营销资讯</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="{dede:field name='typeid' runphp='yes'} if(@me==51) @me='on'; else @me=''; {/dede:field}"><a href="https://www.tukuo.com.cn/cooperation/">合作案例</a></li>
+					<li><a href="https://www.tukuo.com.cn/">途阔主站</a></li>
+				</ul>
+			</div>
+		</div>
+		<!--./ -->
+		<div class="flex header-tools">
+			<a href="https://p.qiao.baidu.com/cps/chat?siteId=17657109&userId=28101355&siteToken=8b6b04060f460dd92d7b09305d068717" target="_blank" rel="nofollow"
+				class="header-getcase"><span><em>限</em><em>时</em><em>免</em><em>费</em></span>&nbsp; 获取营销方案</a>
+			<a href="javascript:void(0);" class="header-tel"><i class="iconfont">&#xe624;</i> 400-186-1218</a>
+			<div class="navbar">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<!-- ./navbar -->
+		</div>
+		<!-- ./search -->
+	</div>
+</div>
+  <!--头部结束-->
+
+<div class="outer">
+    <img class="img" src="/images/404-outer.jpg" alt="404">
+    <div class="content">
+      <div class="explain">
+        <h1>404</h1>
+        <p class="h6">无法访问此网站</p>
+        <p>请试试以下办法：</p>
+        <p>1.请检查您访问的网址是否正确</p>
+        <p>2.如果您不能确认访问的网址，请 <a href="javascript:history.go(-1);">返回上一页</a> 继续查看原网页。</p>
+        <p>3.您还可以回到 <a href="https://www.tkmkt.cn/">途阔</a> 首页</p>
+        <p class="blue">
+          ><a href="https://www.tkmkt.cn/network/">网站建设</a>><a href="https://www.tkmkt.cn/seo/">网站优化SEO</a>><a
+            href="https://www.tkmkt.cn/sem/">SEM竞价推广</a>
+        </p>
+        <p class="blue">
+          ><a href="https://www.tkmkt.cn/app/">APP营销</a>><a href="https://www.tkmkt.cn/xiao/">小红书营销</a>><a
+            href="https://www.tkmkt.cn/smo/">SMO口碑营销</a>
+        </p>
+        <!-- <p>4.即将在 <span class="count-down">5</span> 秒后返回途阔首页。</p> -->
+        <p>请直接点击 <a href="https://www.tkmkt.cn/">https://www.tkmkt.cn/</a> 访问网站。</p>
+      </div>
+      <div class="button-div">
+        <button class="button" type="button" onclick="location.reload()">
+          刷新重试
+        </button>
+      </div>
+    </div>
+</div>
+<!--底部-->		
+<script src="/js/jquery.js?v=1699535732"></script>
+<link rel="stylesheet" type="text/css" href="/assets/js/lib/swiper-7.4.1/swiper-bundle.min.css?v=1699535732" />
+<script src="/assets/js/lib/swiper-7.4.1/swiper-bundle.min.js?v=1699535732" type="text/javascript" charset="utf-8"></script>
+<script src="/assets/js/index.js?v=1699535732" type="text/javascript" charset="utf-8"> </script>
+<!-- <link rel="stylesheet" type="text/css" href="/css/public.css"> -->
+<script src="/assets/js/global.js?v=1699535732" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="/js/common.js?v=1699535732"></script>
+<!-- ./main end -->
+<div class="footer-bg">
+	<div class="container">
+		<div class="flex footer">
+			<div class="footer-left">
+				<div class="footer-logo"><img src="/assets/images/footer-logo.png"></div>
+				<div class="footer-li">
+					<h3>产品与服务</h3>
+					<ul>
+						<li><a href="/seo">SEO服务</a></li>
+						<li><a href="/app">APP营销</a></li>
+						<li><a href="/xiao">小红书营销</a></li>
+						<li><a href="/wechat">微信营销</a></li>
+						<li><a href="/smo">品牌维护</a></li>
+						<li><a href="/sem">广告投放</a></li>
+						<li><a href="/zhihu">知乎营销</a></li>
+						<li><a href="/video">短视频营销</a></li>
+					</ul>
+				</div>
+				<div class="footer-menu">
+					<a target="_blank" href="https://www.tukuo.com.cn/cooperation/">合作案例</a>
+					<a href="/about">关于途阔</a>
+					<a href="/news">新闻中心</a>
+				</div>
+			</div>
+			<div class="footer-right">
+				<div class="footer-contact">
+					<h3>联系我们</h3>
+					<p>咨询热线：400-186-1218</p>
+				</div>
+				<div class="footer-wechat">
+					<div>
+						<img src="/assets/images/footer-wechat1.png">
+						<p>微信公众号</p>
+					</div>
+					<div>
+						<img src="/assets/images/wx1.png">
+						<p>微博</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="copyright-bg">
+			<div class="flex copyright">
+				<div class="copyright-info">
+					<p>©2020上海途阔网络科技有限公司 <a href="http://beian.miit.gov.cn/" target="_blank">备案号：沪ICP18012497号-3</a></p>
+				</div>
+				<a class="commaLink"></a>
+			</div>
+		</div>
+		<!-- ./copyright end -->
+	</div>
+</div>
+<!-- ./footer -->
+<div class="fixed-online">
+	<ul class="flex">
+		<li>
+			<a href="/">
+				<i class="iconfont">&#xe661;</i>
+				<p>首页</p>
+			</a>
+		</li>
+		<li>
+			<a href="http://p.qiao.baidu.com/cps/chat?siteId=13254695&amp;userId=26745517" target="_blank" rel="nofollow">
+				<i class="iconfont">&#xe664;</i>
+				<p>获取诊断书</p>
+			</a>
+		</li>
+		<li>
+			<a href="https://p.qiao.baidu.com/cps/chat?siteId=17657109&userId=28101355&siteToken=8b6b04060f460dd92d7b09305d068717" target="_blank" rel="nofollow">
+				<i class="iconfont">&#xe662;</i>
+				<p>在线咨询</p>
+			</a>
+		</li>
+		<li>
+			<a href="tel:400-808-6621">
+				<i class="iconfont">&#xe663;</i>
+				<p>联系我们</p>
+			</a>
+		</li>
+	</ul>
+</div>
+<!-- ./chatonline -->
+
+  <script src="/js/jquery.js"></script>
+  <script src="/js/wow.min.js"></script>
+  <script src="/js/swiper.min.js"></script>
+  <script src="/js/custom-2.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      // TimeDown(5);
+      function TimeDown(num) {
+        setTimeout(function () {
+          $('.count-down').html(num);
+          num--;
+          if (num < 0) {
+            window.location.href = 'https://www.tkmkt.cn/';
+            return false;
+          }
+          TimeDown(num);
+        }, 1000)
+      }
+    })
+  </script>
+</body>
+
+</html>

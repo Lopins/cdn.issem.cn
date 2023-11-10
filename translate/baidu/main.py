@@ -1,0 +1,126 @@
+# -*- coding: utf-8 -*-
+# @Author: Null119 微信公众号/网站：治廷君
+# @Desc: { 百度翻译 }
+# @Date: { 2023-01-06 }
+# @script: { cryptojs.js }
+
+import re
+import os
+import time
+import requests
+import execjs
+
+headers = {
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+    'Host': 'fanyi.baidu.com',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36 Edg/108.0.1462.54'
+}
+r = requests.Session()
+
+"""
+这个函数大致的功能是读取或者下载 baidu_js 脚本，并使用 execjs 模块编译该脚本，以便在 Python 代码中使用 JavaScript 代码。
+具体过程：
+首先，如果当前路径下存在名为 cryptojs.js 的文件，就打开这个文件来读取其中的 JS 代码；否则，使用 Requests 库通过 HTTP 请求从一个 URL（应该是翻译服务商提供的链接）获取 JS 代码。
+接下来，使用 execjs.compile() 函数编译这段 JS 代码并返回一个上下文对象 ctx。该函数会自动检测计算机中安装的任何可用 JavaScript 引擎，并尝试使用它们来解释和执行指定的代码。在本例中，我们可能在计算机中有 Node.js、PhantomJS 或 PyV8 等引擎，能够执行这样的任务。
+接着可以使用返回的上下文对象 ctx 来在 Python 中调用 JavaScript 函数。
+"""
+
+if os.path.exists("cryptojs.js"):
+    with open('cryptojs.js', 'r', encoding='utf-8') as f:
+        baidu_js = f.read()
+else:
+    resp = r.get('https://assets.chuying.ltd/translate/baidu/cryptojs.js') #此处加headers会报错
+    baidu_js = resp.text
+
+ctx = execjs.compile(baidu_js)
+
+def getTokenGtk():
+    """
+    这段代码定义了一个名为 getTokenGtk 的函数，它执行以下操作：
+    定义变量 headers 作为 HTTP 请求头。
+    使用 requests 库的 get 方法发送GET请求到指定URL（https://fanyi.baidu.com/）, 并传递头部参数headers。
+    从响应中提取文本，并保存在变量 resp 中。
+    使用正则表达式在响应文本中匹配特定的字符串，将其中的gtk值和token值分别保存在变量 gtk 和 token 中。
+    返回变量 token 和 gtk 的值。
+    这个函数的作用是获取在百度翻译网站中使用的某些参数，即gtk和token。这些参数通常在使用像"有道翻译"或"谷歌翻译"等第三方API进行自动翻译时需要用到。
+    """
+    resp=r.get('https://fanyi.baidu.com/',headers=headers).text
+    resp = r.get('https://fanyi.baidu.com/', headers=headers).text
+    gtk=re.search(r'window\.gtk = "(.*?)"',resp).group(1)
+    token=re.search(r"token: '([a-z0-9]{32})'",resp).group(1)
+    return token,gtk
+
+def getTS():
+    """
+    此脚本暂未写好：不调用
+    这段代码定义了一个名为 getTS 的函数，它执行以下操作：
+    使用 requests 库的 get 方法获取指定 URL（https://dlswbr.baidu.com/heicha/mm/2060/acs-2060.js）的响应文本。
+    输出整个响应文本。
+    在响应文本中使用正则表达式找到格式为 "p.run(...)" 的内容，并将其保存在变量 runtext 中。
+    在 runtext 中使用正则表达式找到 13 位数字并将其保存在变量 ts 中。
+    返回变量 ts 的值。
+    这个函数的作用是从网站获取时间戳 (timestamp) 的值。
+    """
+    resp=r.get('https://dlswbr.baidu.com/heicha/mm/2060/acs-2060.js').text
+    runtext=re.search(r'p\.run\(.*?\)',resp).group()
+    # ts=re.search(r'[\d+]{13}',runtext).group()
+    # ts = re.search(r'\d{13}', runtext).group(0)
+    # return ts
+    if runtext:
+        ts = re.search(r'\d{13}', runtext.group(0)).group(0)
+        return ts
+    else:
+        raise Exception("无法找到 'p.run()'")
+
+def getData(words,token,gtk,ts):
+    """
+    这段代码定义了一个名为 getData 的函数，它执行以下操作：
+    定义变量 key 作为加密所需的key值。
+    在一个 while 循环中一直发送 POST 请求，直到成功获得翻译结果或达到某些错误条件。
+    在每次循环开始时，使用机器翻译引擎中的 AcsToken 函数计算 acstoken 值，然后使用 gtk 和单词文本形成一个字符串来计算 sign 值。
+    构建请求数据并将其存储在 pdat 变量中。
+    将 acstoken 添加到请求头中。
+    发送 POST 请求到指定URL（https://fanyi.baidu.com/v2transapi?from=zh&to=en），并传递数据pdat和请求头部参数。
+    如果响应包含 "errmsg" 则尝试再次执行请求，即更改 key 的值。如果已经重试了多次（不在此代码中实现）但仍无法获得有效的响应，则跳出while循环并终止操作。
+    如果成功获取到响应，则打印相关信息，包括获取到的 token、acstoken和sign值以及翻译结果，然后跳出while循环并终止操作。
+    这个函数的作用是获取百度翻译网站中英文互译的实时翻译结果，并将其打印出来。该函数使用一些计算，如生成 acstoken 和 sign 值，并使用在 getTokenGtk 函数中获取的 token 和 gtk 值来构建 HTTP 请求的头部参数。
+    """
+    key='aiyyeswmsceomsaa'
+    while True:
+        acstoken=str(ts)+str(ctx.eval('AcsToken("https://fanyi.baidu.com/#zh/en/' + words +'","'+key+'")'))
+        sign=str(ctx.eval('sign("' + words + '","'+gtk+'")'))
+        pdat={
+            "from":"zh",
+            "to":"en",
+            "query":words,
+            "transtype":"realtime",
+            "simple_means_flag":"3",
+            "sign":sign,
+            "token":token,
+            "domain":"common"
+        }
+        r.headers['Acs-Token'] = acstoken
+        resp= r.post('https://fanyi.baidu.com/v2transapi?from=zh&to=en',data=pdat)
+        if 'errmsg' in resp.json():
+            if key=='aiyyeswmsceomsaa':
+                key='meaaauoegemaaaqs'
+            else:
+                key == 'aiyyeswmsceomsaa'
+        else:
+            # print('Acs-Token：', acstoken)
+            # print('Token：',token)
+            # print('sign：', sign)
+            print('翻译内容：',words,', 翻译结果：',resp.json()['trans_result']['data'][0]['dst'])
+            break
+
+def main():
+    token,gtk=getTokenGtk()
+    # 生成时间戳，此方法暂未写好
+    # ts=getTS()
+    ts = time.time()
+    words = '中间'
+    getData(words,token,gtk,ts)
+
+
+if __name__ == '__main__':
+    main()

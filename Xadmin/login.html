@@ -1,0 +1,91 @@
+<!doctype html>
+<html class="x-admin-sm">
+
+<head>
+    <meta charset="UTF-8">
+    <title>后台登录 - 楚莺信息</title>
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="stylesheet" href="https://assets.chuying.ltd/Xadmin/css/font.css">
+    <link rel="stylesheet" href="https://assets.chuying.ltd/Xadmin/css/login.css">
+    <link rel="stylesheet" href="https://assets.chuying.ltd/Xadmin/css/xadmin.css">
+    <script src='https://assets.chuying.ltd/Xadmin/js/jquery.min.js'></script>
+    <script src="https://assets.chuying.ltd/Xadmin/lib/layui/layui.js" charset="utf-8"></script>
+    <!--[if lt IE 9]>
+    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="login-bg" style="background: url(https://cn.bing.com/th?id=OHR.CosmicCliffs_ZH-CN9555199651_1920x1200.jpg&rf=LaDigue_1920x1200.jpg&amp;rf=LaDigue_1920x1200.jpg&amp;pid=hp) no-repeat center;background-position: center; background-size: cover; background-attachment: fixed; background-repeat: no-repeat;">
+    <div class="login layui-anim layui-anim-up">
+        <div class="message">后台登录</div>
+        <div id="darkbannerwrap"></div>
+        <form method="post" class="layui-form">
+            <input name="account" placeholder="请输入后台账号..." type="text" lay-verify="required" class="layui-input">
+            <hr class="hr15">
+            <input name="password" lay-verify="required" placeholder="请输入后台密码..." type="password" class="layui-input">
+            <hr class="hr15">
+            <input name="captcha" lay-verify="required" placeholder="请输入验证码..." type="text" class="layui-input">
+            <div style="float: right;border: #ddd 2px solid;border-radius: 5px;display: inline-block;overflow: hidden">
+                <img title="点击刷新验证码" src="data:image/png;base64,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" id="code_img" onClick="this.src='data:image/png;base64,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';" width="145" height="46"/>
+            </div>
+            <hr class="hr15">
+            <input value="登录" lay-submit lay-filter="login" style="width:100%;" type="submit">
+            <hr class="hr20">
+        </form>
+    </div>
+    <script>
+    var interval;
+    $('#code_img').on('load', function() {
+        clearInterval(interval);
+        interval = setInterval(function() {
+            $("#code_img").trigger("click");
+        }, 120000); //2分钟自动刷新
+    });
+    $(function() {
+        layui.use('form', function() {
+            var form = layui.form;
+            form.on('submit(login)', function(form) {
+                var Load = layer.load(2, { shade: [0.3, '#000'] }); //开始加载
+                form.field.mode = 'admin';
+                $.ajax({
+                    type: "POST",
+                    url: "/login_handle",
+                    data: form.field,
+                    dataType: "json",
+                    success: function(json) { //SUCCESS
+                        var data = $.parseJSON(json);
+                        if (data.code == 0) {
+                            layer.close(Load); //关闭加载
+                            var indexa = layer.msg(data.msg, { time: 1000, icon: 6 }, function() {
+                                layer.close(indexa);
+                                window.location.href = data.url;
+                            });
+                        } else {
+                            if (data.code == 101) {
+                                $("#code_img").trigger("click");
+                            }
+                            layer.close(Load); //关闭加载
+                            var indexa = layer.alert(data.msg, { title: data.title, icon: 5 }, function() {
+                                layer.close(indexa);
+                            })
+                        }
+                    },
+                    error: function() { //ERROR
+                        layer.close(Load); //关闭加载
+                        layer.msg('系统繁忙');
+                        return false;
+                    }
+                });
+                return false;
+            });
+        });
+    })
+    </script>
+    <!-- 底部结束 -->
+</body>
+
+</html>
