@@ -6,7 +6,7 @@
 |----------------------
 */
 .footer-bg {
-	padding: 5% 0 2%;
+/*	padding: 5% 0 2%;*/
 	background: #F7F7FA;
 }
 
@@ -16,6 +16,10 @@
 
 .footer-left {
 	width: 70%;
+}
+
+.footer-logo{
+    margin: 2% 0 0;
 }
 
 .footer-logo img {
@@ -221,8 +225,9 @@
 |----------------------
 */
 .copyright-bg {
-	/*margin-top: 120px;*/
-	padding-top: 15px;
+	/*margin-top: 120px;
+	padding-top: 15px;*/
+	padding-top: 10px 0;
 	border-top: 1px solid #D3D7DF;
 }
 
