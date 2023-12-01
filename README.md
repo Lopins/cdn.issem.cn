@@ -12,7 +12,7 @@
 
 	基于 `Layui + Iconfont` 等简易后台登陆模板（HTML）
 
-### 4. OnePage介绍模板( <https://cdn.issem.cn/Ladmin/index.html> )
+### 4. OnePage介绍模板( <https://cdn.issem.cn/OnePage/index.html> )
 
 	一款 ` 简洁高效 ` 的项目/个人/团队介绍模板（HTML）
 
