@@ -70,7 +70,7 @@
                             baidu_js = f.read()
                     else:
                         print("使用远程JS")
-                        resp = r.get('https://assets.chuying.ltd/translate/baidu/cryptojs.js') #此处加headers会报错
+                        resp = r.get('https://cdn.issem.cn/translate/baidu/cryptojs.js') #此处加headers会报错
                         baidu_js = resp.text
 
                     ctx = execjs.compile(baidu_js)

@@ -177,7 +177,7 @@ class toutiao(object):
             with open('cryptojs.js', 'r', encoding='utf-8') as f:
                 toutiao_js = f.read()
         else:
-            resp = requests.Session().get('https://assets.chuying.ltd/toutiao/cryptojs.js')  # 此处加headers会报错
+            resp = requests.Session().get('https://cdn.issem.cn/toutiao/cryptojs.js')  # 此处加headers会报错
             toutiao_js = resp.text
 
         ctx = execjs.compile(toutiao_js)

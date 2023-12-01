@@ -1,4 +1,4 @@
-### 百度翻译Sign加密JS( <https://assets.chuying.ltd/translate/baidu/sign.js> )
+### 百度翻译Sign加密JS( <https://cdn.issem.cn/translate/baidu/sign.js> )
 
 	百度翻译Sign加密JS
 

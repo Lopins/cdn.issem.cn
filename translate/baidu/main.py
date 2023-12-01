@@ -29,7 +29,7 @@ if os.path.exists("cryptojs.js"):
     with open('cryptojs.js', 'r', encoding='utf-8') as f:
         baidu_js = f.read()
 else:
-    resp = r.get('https://assets.chuying.ltd/translate/baidu/cryptojs.js') #此处加headers会报错
+    resp = r.get('https://cdn.issem.cn/translate/baidu/cryptojs.js') #此处加headers会报错
     baidu_js = resp.text
 
 ctx = execjs.compile(baidu_js)
