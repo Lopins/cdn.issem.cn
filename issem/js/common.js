@@ -1,5 +1,27 @@
-let oScroll = $(document).scrollTop();
+if (window.location.href.indexOf("view-source:") > -1) {
+  window.location.href = "https://www.issem.cn/";
+}
+setInterval(function() {
+    debuggerCheck();
+}, 1000);
+var debuggerCheck = function() {
+    function doCheck(a) {
+        if (('' + a / a)['length'] !== 1 || a % 20 === 0) {
+            (function() {}['constructor']('debugger')());
+        } else {
+            (function() {}['constructor']('debugger')());
+        }
+        doCheck(++a);
+    }
+    try {
+        doCheck(0);
+    } catch (err) {
 
+    }
+};
+debuggerCheck();
+
+let oScroll = $(document).scrollTop();
 function intLogo(oScroll) {
     if (oScroll > 0) {
         $('.header').addClass("header-active");
@@ -8,8 +30,6 @@ function intLogo(oScroll) {
     }
 }
 intLogo(oScroll);
-// 
-
 $(window).scroll(function(e) {
     let oScroll = $(document).scrollTop();
     // console.log(oScroll);
@@ -36,8 +56,6 @@ $('.close-burger').click(function() {
     $('.burger-bg').addClass('burger-bg-active');
     clearTouch("body", "auto")
 })
-
-
 
 
 $('.burger-nav-lists>li').click(function(e) {
@@ -124,8 +142,7 @@ $('.about-core ul.flex > li').mouseover(function() {
 })
 
 
-$(".footer-li h3").on("click",function(){
-    
+$(".footer-li h3").on("click",function(){  
     if($(this).hasClass("footer-li-active")){
         $(this).removeClass("footer-li-active")
         $(this).next('ul').hide()
@@ -133,8 +150,6 @@ $(".footer-li h3").on("click",function(){
         $(this).addClass("footer-li-active")
         $(this).next('ul').show()
     }
-    
-
 })
 
 var pageCaseBottom = new Swiper(".page-b2b-bottom", {
@@ -328,7 +343,6 @@ new WOW().init();
 // })
 
 (function(){
-	// news 20210708
 	if ($(".news-information")){ 
 		$(".news-information").click(function(){
 			let url = $(this).attr('url');
@@ -337,7 +351,6 @@ new WOW().init();
 		});
 	}
 	
-	// tou bu zhe die 20210802
     var fadetimeM;
     $(".header .nav .has-sub").hover(function() {
         var $this = $(this);
@@ -375,7 +388,6 @@ new WOW().init();
         }, 300);
     });
 	
-	// 20211105
     var fadetimeMNews;
     $(".header .nav .has-sub-news").hover(function() {
         var $this = $(this);
@@ -493,23 +505,3 @@ s.parentNode.insertBefore(el, s);
     t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
     y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 })(window, document, "clarity", "script", "fpy2h27a9n");
-
-setInterval(function() {
-    debuggerCheck();
-}, 1000);
-var debuggerCheck = function() {
-    function doCheck(a) {
-        if (('' + a / a)['length'] !== 1 || a % 20 === 0) {
-            (function() {}['constructor']('debugger')());
-        } else {
-            (function() {}['constructor']('debugger')());
-        }
-        doCheck(++a);
-    }
-    try {
-        doCheck(0);
-    } catch (err) {
-
-    }
-};
-debuggerCheck();
