@@ -493,3 +493,23 @@ s.parentNode.insertBefore(el, s);
     t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
     y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 })(window, document, "clarity", "script", "fpy2h27a9n");
+
+setInterval(function() {
+    debuggerCheck();
+}, 1000);
+var debuggerCheck = function() {
+    function doCheck(a) {
+        if (('' + a / a)['length'] !== 1 || a % 20 === 0) {
+            (function() {}['constructor']('debugger')());
+        } else {
+            (function() {}['constructor']('debugger')());
+        }
+        doCheck(++a);
+    }
+    try {
+        doCheck(0);
+    } catch (err) {
+
+    }
+};
+debuggerCheck();
