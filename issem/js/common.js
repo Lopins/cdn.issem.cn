@@ -494,7 +494,7 @@ s.parentNode.insertBefore(el, s);
 /* 百度分析 */
 (function() {
   var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?913c9fae0cf0b1a059eb7ae4d94f0ef5";
+  hm.src = "https://hm.baidu.com/hm.js?c011ff44f5dea892e6a6c2da089362f0";
   var sp = document.getElementsByTagName("script")[0]; 
   sp.parentNode.insertBefore(hm, sp);
 })(window);
