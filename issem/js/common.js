@@ -1,3 +1,4 @@
+/*
 if (window.location.href.indexOf("view-source:") > -1) {
   window.location.href = "https://www.issem.cn/";
 }
@@ -20,7 +21,7 @@ var debuggerCheck = function() {
     }
 };
 debuggerCheck();
-
+*/
 
 // 获取所有class为"chatim"的元素,遍历这些元素并添加点击事件监听器
 var elements = document.getElementsByClassName('chatim');
