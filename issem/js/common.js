@@ -27,8 +27,11 @@ var elements = document.getElementsByClassName('chatim');
 for (var i = 0; i < elements.length; i++) {
   elements[i].addEventListener('click', function() {
     // 当元素被点击时，调用aiFanFan函数
-    // aiFanFan();
-    alert("点击了爱番番");
+    $(".cli_a").click(function(event) {
+        if ($('#nb_invite_ok').length > 0) {
+            $('#nb_invite_ok').click();
+        }
+    });
   });
 }
 
