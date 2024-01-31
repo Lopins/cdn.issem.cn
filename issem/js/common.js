@@ -26,18 +26,19 @@ debuggerCheck();
 // 获取所有class为"chatim"的元素,遍历这些元素并添加点击事件监听器
 var elements = document.getElementsByClassName('chatim');
 for (var i = 0; i < elements.length; i++) {
-  elements[i].addEventListener('click', function() {
-    // 当元素被点击时，调用爱番番函数
-    $(".chatim").click(function(event) {
-        if ($('#nb_invite_ok').length > 0) {
-            $('#nb_invite_ok').click();
-        }
+    elements[i].addEventListener('click', function() {
+        // 当元素被点击时，调用爱番番函数
+        $(".chatim").click(function(event) {
+            if ($('#nb_invite_ok').length > 0) {
+                $('#nb_invite_ok').click();
+            }
+        });
     });
-  });
 }
 
 // 限时免费按钮动效
 let oScroll = $(document).scrollTop();
+
 function intLogo(oScroll) {
     if (oScroll > 0) {
         $('.header').addClass("header-active");
@@ -153,11 +154,11 @@ $('.about-core ul.flex > li').mouseover(function() {
 })
 
 
-$(".footer-li h3").on("click",function(){  
-    if($(this).hasClass("footer-li-active")){
+$(".footer-li h3").on("click", function() {
+    if ($(this).hasClass("footer-li-active")) {
         $(this).removeClass("footer-li-active")
         $(this).next('ul').hide()
-    }else{
+    } else {
         $(this).addClass("footer-li-active")
         $(this).next('ul').show()
     }
@@ -313,7 +314,7 @@ var swiperCase = new Swiper('.xiao-case-swiper .swiper ', {
         stretch: 0,
         depth: 150,
         modifier: 1,
-        slideShadows : true,
+        slideShadows: true,
     },
     pagination: {
         el: '.xiao-case-swiper .swiper-pagination-case',
@@ -353,15 +354,15 @@ new WOW().init();
 //  mycheckWidth()
 // })
 
-(function(){
-	if ($(".news-information")){ 
-		$(".news-information").click(function(){
-			let url = $(this).attr('url');
-			if (url)
-				window.location.href = url;
-		});
-	}
-	
+(function() {
+    if ($(".news-information")) {
+        $(".news-information").click(function() {
+            let url = $(this).attr('url');
+            if (url)
+                window.location.href = url;
+        });
+    }
+
     var fadetimeM;
     $(".header .nav .has-sub").hover(function() {
         var $this = $(this);
@@ -398,7 +399,7 @@ new WOW().init();
             });
         }, 300);
     });
-	
+
     var fadetimeMNews;
     $(".header .nav .has-sub-news").hover(function() {
         var $this = $(this);
@@ -452,28 +453,91 @@ new WOW().init();
         if (window.innerHeight != undefined) {
             return window.innerHeight;
         } else {
-            var B = document.body
-            , D = document.documentElement;
+            var B = document.body,
+                D = document.documentElement;
             return Math.min(D.clientHeight, B.clientHeight);
         }
     }
-    
+
     // mobile terminal fold
-    $('.m_nav ul li i').click(function () {
+    $('.m_nav ul li i').click(function() {
         $(this).parent().children('ul').slideToggle().parent().siblings().children('ul').slideUp();
         $(this).toggleClass('sjj_nav_i_se');
         $(this).parent().siblings().find('i').removeClass('sjj_nav_i_se');
     });
-    
+
     $('.sp_nav_xjb').html('<svg t="1496193951932" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="995" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"> <path d="M768.468 428.876l-84.723-84.723-170.711 170.711-170.711-170.711-84.723 84.723 170.711 170.711-0.092 0.091 84.723 84.724 0.092-0.092 0.092 0.092 84.723-84.724-0.092-0.091z" p-id="996"></path></svg>');
 
-    $('.customer_service_guan').click(function(){
-        $('.customer_service').css('display','none')
+    $('.customer_service_guan').click(function() {
+        $('.customer_service').css('display', 'none')
     })
 })();
 
+// 对应页面加载Javascript
+if(pagetag == 1){
+    // 网站主页
+}
+if(pagetag == 2){
+    // 网站优化（SEO） 网站分析
+    $("#webAnaly").click(function() {
+        var url = $("#keyPrice").val();
+        if (url == '') {
+            alert("请输入网站域名。");
+        } else {
+            $("#webAnaly div.fr a").attr("href", "/seoreport?domain=" + url);
+        }
+    });
+}
+if(pagetag == 3){
+    // 关于我们/微信营销
+    if ($('.counter').length > 0) {
+        $('.counter').countUp();
+    }
+}
+if(pagetag == 4){
+    // APP营销
+    var TouchNav = new Swiper('.page-case-thead .swiper', {
+        freeMode: true,
+        slidesPerView: 'auto',
+    }); 
+}
+if(pagetag == 5){
+    // 广告投放（SEM）
+    var swiperConfigs = [
+        { head: '.ad-launch-head-s1 .swiper', foot: '.ad-launch-foot-s1 .swiper' },
+        { head: '.ad-launch-head-s2 .swiper', foot: '.ad-launch-foot-s2 .swiper' },
+        { head: '.ad-launch-head-s3 .swiper', foot: '.ad-launch-foot-s3 .swiper' },
+        ];
+        swiperConfigs.forEach((config, index) => {
+        var swiperHead = new Swiper(config.head, {
+            freeMode: true,
+            watchSlidesProgress: true,
+            slidesPerView: 3,
+            breakpoints: {
+            480: { slidesPerView: 4 },
+            768: { slidesPerView: 5 },
+            1024: { slidesPerView: 6 },
+            },
+        });
+        var swiperFoot = new Swiper(config.foot, {
+            spaceBetween: 0,
+            thumbs: {
+            swiper: swiperHead,
+            },
+        });
+    }); 
+}
+if(pagetag == 6){
+    // 资讯列表
+    var TouchNav = new Swiper('.fast-nav .swiper', {
+        freeMode: true,
+        slidesPerView: 'auto',
+    });
+}
+
+
 /* 百度推送 */
-(function(){
+(function() {
     var list = document.getElementsByTagName("a");
     var url = [];
     var curProtocol = window.location.protocol.split(':')[0];
@@ -494,25 +558,29 @@ new WOW().init();
 })(window);
 
 /* 头条推送 */
-(function(){
-var el = document.createElement("script");
-el.src = "https://lf1-cdn-tos.bytegoofy.com/goofy/ttzz/push.js?2da07297707878f3f21d377ee213b8de36a10476b25de977823062c7e6a73fae30632485602430134f60bc55ca391050b680e2741bf7233a8f1da9902314a3fa";
-el.id = "ttzz";
-var s = document.getElementsByTagName("script")[0];
-s.parentNode.insertBefore(el, s);
+(function() {
+    var el = document.createElement("script");
+    el.src = "https://lf1-cdn-tos.bytegoofy.com/goofy/ttzz/push.js?2da07297707878f3f21d377ee213b8de36a10476b25de977823062c7e6a73fae30632485602430134f60bc55ca391050b680e2741bf7233a8f1da9902314a3fa";
+    el.id = "ttzz";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(el, s);
 })(window);
 
 /* 百度分析 */
 (function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?c011ff44f5dea892e6a6c2da089362f0";
-  var sp = document.getElementsByTagName("script")[0]; 
-  sp.parentNode.insertBefore(hm, sp);
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?c011ff44f5dea892e6a6c2da089362f0";
+    var sp = document.getElementsByTagName("script")[0];
+    sp.parentNode.insertBefore(hm, sp);
 })(window);
 
 /* Bing分析 */
-(function(c,l,a,r,i,t,y){
-    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+(function(c, l, a, r, i, t, y) {
+    c[a] = c[a] || function() {
+        (c[a].q = c[a].q || []).push(arguments) };
+    t = l.createElement(r);
+    t.async = 1;
+    t.src = "https://www.clarity.ms/tag/" + i;
+    y = l.getElementsByTagName(r)[0];
+    y.parentNode.insertBefore(t, y);
 })(window, document, "clarity", "script", "fpy2h27a9n");
