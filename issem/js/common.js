@@ -21,6 +21,18 @@ var debuggerCheck = function() {
 };
 debuggerCheck();
 
+
+// 获取所有class为"chatim"的元素,遍历这些元素并添加点击事件监听器
+var elements = document.getElementsByClassName('chatim');
+for (var i = 0; i < elements.length; i++) {
+  elements[i].addEventListener('click', function() {
+    // 当元素被点击时，调用aiFanFan函数
+    // aiFanFan();
+    alert("点击了爱番番");
+  });
+}
+
+// 限时免费按钮动效
 let oScroll = $(document).scrollTop();
 function intLogo(oScroll) {
     if (oScroll > 0) {
@@ -32,11 +44,8 @@ function intLogo(oScroll) {
 intLogo(oScroll);
 $(window).scroll(function(e) {
     let oScroll = $(document).scrollTop();
-    // console.log(oScroll);
     intLogo(oScroll);
-
 });
-
 
 // 移动端
 function clearTouch(el, oStyle) {
@@ -51,12 +60,10 @@ $('.navbar').click(function() {
     clearTouch("body", "hidden")
 })
 
-
 $('.close-burger').click(function() {
     $('.burger-bg').addClass('burger-bg-active');
     clearTouch("body", "auto")
 })
-
 
 $('.burger-nav-lists>li').click(function(e) {
     if ($(this).find('.burger-nav-f1').length > 0) {
