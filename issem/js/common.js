@@ -27,8 +27,8 @@ debuggerCheck();
 var elements = document.getElementsByClassName('chatim');
 for (var i = 0; i < elements.length; i++) {
   elements[i].addEventListener('click', function() {
-    // 当元素被点击时，调用aiFanFan函数
-    $(".cli_a").click(function(event) {
+    // 当元素被点击时，调用爱番番函数
+    $(".chatim").click(function(event) {
         if ($('#nb_invite_ok').length > 0) {
             $('#nb_invite_ok').click();
         }
