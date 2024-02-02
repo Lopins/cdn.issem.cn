@@ -22,8 +22,6 @@ let businessSwiper = new Swiper('.index-business-swiper', {
 
 });
 
-
-
 var indexCaseBottom = new Swiper(".index-b2b-bottom", {
 	slidesPerView: 2,
 	spaceBetween: 20,
@@ -130,57 +128,53 @@ var indexCaseTop1 = new Swiper(".index-b2c-top", {
 	}
 });
 
-$(".index-case-thead ul li").eq(0).addClass("on");
-$(".index-case-tbody .index-case-tbody-item").eq(0).show();
-$(".index-case-thead ul li").on("click", function() {
-	$(this).addClass("on").siblings().removeClass("on")
-	$(".index-case-tbody .index-case-tbody-item").eq($(this).index()).show().siblings().hide()
-})
+(function($) {
+	$(".index-case-thead ul li").eq(0).addClass("on");
+	$(".index-case-tbody .index-case-tbody-item").eq(0).show();
+	$(".index-case-thead ul li").on("click", function() {
+		$(this).addClass("on").siblings().removeClass("on")
+		$(".index-case-tbody .index-case-tbody-item").eq($(this).index()).show().siblings().hide()
+	})
 
-$(".index-marketing-left ul li").eq(0).addClass("on");
-$(".index-marketing-right .index-marketing-item").eq(0).show();
-$(".index-marketing-left ul li").on("click", function() {
-	$(this).addClass("on").siblings().removeClass("on")
-	$(".index-marketing-right .index-marketing-item").eq($(this).index()).show().siblings().hide()
-})
+	$(".index-marketing-left ul li").eq(0).addClass("on");
+	$(".index-marketing-right .index-marketing-item").eq(0).show();
+	$(".index-marketing-left ul li").on("click", function() {
+		$(this).addClass("on").siblings().removeClass("on")
+		$(".index-marketing-right .index-marketing-item").eq($(this).index()).show().siblings().hide()
+	})
 
-var indexMarketingDesc = new Swiper(".index-marketing-desc .swiper", {
-	slidesPerView: 1,
-	spaceBetween: 20,
-	pagination: {
-		el: ".index-marketing-desc .swiper-pagination",
-	},
-	watchSlidesVisibility: true,
-	watchSlidesProgress: true,
-	autoplay: {
-		delay: 3000,
-		stopOnLastSlide: false,
-		disableOnInteraction: true,
-	},
-	breakpoints: {
-		640: {
-			slidesPerView: 1,
-			spaceBetween: 20,
+	var indexMarketingDesc = new Swiper(".index-marketing-desc .swiper", {
+		slidesPerView: 1,
+		spaceBetween: 20,
+		pagination: {
+			el: ".index-marketing-desc .swiper-pagination",
 		},
-		768: {
-			slidesPerView: 2,
-			spaceBetween: 20,
+		watchSlidesVisibility: true,
+		watchSlidesProgress: true,
+		autoplay: {
+			delay: 3000,
+			stopOnLastSlide: false,
+			disableOnInteraction: true,
 		},
+		breakpoints: {
+			640: {
+				slidesPerView: 1,
+				spaceBetween: 20,
+			},
+			768: {
+				slidesPerView: 2,
+				spaceBetween: 20,
+			},
 
-		1400: {
-			slidesPerView: 3,
-			spaceBetween: 20,
-		},
-	}
+			1400: {
+				slidesPerView: 3,
+				spaceBetween: 20,
+			},
+		}
+	});
+	$(".index-banenr-arr").on("click", function() {
+		$("html,body").animate({
+			scrollTop: $("#next").offset().top - 50
+		}, 1000)
+	});
 });
-
-
-
-
-
-
-$(".index-banenr-arr").on("click", function() {
-	$("html,body").animate({
-		scrollTop: $("#next").offset().top - 50
-	}, 1000)
-})

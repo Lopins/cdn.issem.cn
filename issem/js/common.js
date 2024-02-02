@@ -38,7 +38,6 @@ for (var i = 0; i < elements.length; i++) {
 
 // 限时免费按钮动效
 let oScroll = $(document).scrollTop();
-
 function intLogo(oScroll) {
     if (oScroll > 0) {
         $('.header').addClass("header-active");
@@ -102,7 +101,6 @@ $('.burger-nav-f1>li').click(function(e) {
     }
 })
 
-
 var pageCaseBottom = new Swiper(".seo-coug .swiper", {
     slidesPerView: 1,
     slidesPerGroup: 1,
@@ -152,7 +150,6 @@ var pageCaseBottom = new Swiper(".seo-coug .swiper", {
 $('.about-core ul.flex > li').mouseover(function() {
     $(this).addClass('active').siblings('').removeClass('active');
 })
-
 
 $(".footer-li h3").on("click", function() {
     if ($(this).hasClass("footer-li-active")) {
@@ -301,7 +298,6 @@ var swiperResults = new Swiper('.slideshow-results .swiper', {
     },
 });
 
-
 var swiperCase = new Swiper('.xiao-case-swiper .swiper ', {
     effect: 'coverflow',
     grabCursor: true,
@@ -328,14 +324,12 @@ $(".page-case-thead ul li").on("click", function() {
     $(".page-case-tbody .page-case-tbody-item").eq($(this).index()).show().siblings().hide()
 })
 
-
 $(".wechat-service-l .wechat-service-item").eq(0).addClass("active");
 $(".wechat-service-r img").eq(0).show();
 $(".wechat-service-l .wechat-service-item").on("click", function() {
     $(this).addClass("active").siblings().removeClass("active")
     $(".wechat-service-r img").eq($(this).index()).show().siblings().hide()
 })
-
 
 new WOW().init();
 // function mycheckWidth() {
@@ -476,6 +470,186 @@ new WOW().init();
 // 对应页面加载Javascript
 if(pagetag == 1){
     // 网站主页
+    // banner
+    let bannerSwiper = new Swiper('.index-banenr-swiper .swiper', {
+        autoplay: {
+            delay: 3000,
+            stopOnLastSlide: false,
+            disableOnInteraction: true,
+        },
+        pagination: {
+            el: ".index-banenr-swiper .swiper-pagination",
+            clickable: true,
+        },
+        speed: 500,
+        // mousewheel: false,
+    });
+    // business
+    let businessSwiper = new Swiper('.index-business-swiper', {
+        effect: 'fade',
+        // direction: 'horizontal',
+        noSwiping: true,
+        speed: 500,
+        mousewheel: false,
+
+    });
+
+    var indexCaseBottom = new Swiper(".index-b2b-bottom", {
+        slidesPerView: 2,
+        spaceBetween: 20,
+        freeMode: true,
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
+        breakpoints: {
+            480: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            640: {
+                slidesPerView: 2.5,
+                spaceBetween: 20,
+            },
+            768: {
+                slidesPerView: 3.5,
+                spaceBetween: 20,
+            },
+            860: {
+                slidesPerView: 4.5,
+                spaceBetween: 20,
+            },
+            1200: {
+                slidesPerView: 5.5,
+                spaceBetween: 20,
+            },
+            1400: {
+                slidesPerView: 6.5,
+                spaceBetween: 20,
+            },
+            1600: {
+                slidesPerView: 7.5,
+                spaceBetween: 20,
+            },
+        }
+    });
+
+    var indexCaseTop = new Swiper(".index-b2b-top", {
+        autoplay: {
+            delay: 3000,
+            stopOnLastSlide: false,
+            disableOnInteraction: true,
+        },
+        navigation: {
+            nextEl: ".index-b2b-top .swiper-button-next",
+            prevEl: ".index-b2b-top .swiper-button-prev",
+        },
+        thumbs: {
+            swiper: indexCaseBottom
+        }
+    });
+
+    var indexCaseBottom1 = new Swiper(".index-b2c-bottom", {
+        slidesPerView: 2,
+        spaceBetween: 20,
+        freeMode: true,
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
+        breakpoints: {
+            480: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            640: {
+                slidesPerView: 2.5,
+                spaceBetween: 20,
+            },
+            768: {
+                slidesPerView: 3.5,
+                spaceBetween: 20,
+            },
+            860: {
+                slidesPerView: 4.5,
+                spaceBetween: 20,
+            },
+            1200: {
+                slidesPerView: 5.5,
+                spaceBetween: 20,
+            },
+            1400: {
+                slidesPerView: 6.5,
+                spaceBetween: 20,
+            },
+            1600: {
+                slidesPerView: 7.5,
+                spaceBetween: 20,
+            },
+        }
+    });
+
+    var indexCaseTop1 = new Swiper(".index-b2c-top", {
+        autoplay: {
+            delay: 3000,
+            stopOnLastSlide: false,
+            disableOnInteraction: true,
+        },
+        navigation: {
+            nextEl: ".index-b2c-top .swiper-button-next",
+            prevEl: ".index-b2c-top .swiper-button-prev",
+        },
+        thumbs: {
+            swiper: indexCaseBottom1
+        }
+    });
+
+    (function($) {
+        $(".index-case-thead ul li").eq(0).addClass("on");
+        $(".index-case-tbody .index-case-tbody-item").eq(0).show();
+        $(".index-case-thead ul li").on("click", function() {
+            $(this).addClass("on").siblings().removeClass("on")
+            $(".index-case-tbody .index-case-tbody-item").eq($(this).index()).show().siblings().hide()
+        })
+
+        $(".index-marketing-left ul li").eq(0).addClass("on");
+        $(".index-marketing-right .index-marketing-item").eq(0).show();
+        $(".index-marketing-left ul li").on("click", function() {
+            $(this).addClass("on").siblings().removeClass("on")
+            $(".index-marketing-right .index-marketing-item").eq($(this).index()).show().siblings().hide()
+        })
+
+        var indexMarketingDesc = new Swiper(".index-marketing-desc .swiper", {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            pagination: {
+                el: ".index-marketing-desc .swiper-pagination",
+            },
+            watchSlidesVisibility: true,
+            watchSlidesProgress: true,
+            autoplay: {
+                delay: 3000,
+                stopOnLastSlide: false,
+                disableOnInteraction: true,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+
+                1400: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                },
+            }
+        });
+        $(".index-banenr-arr").on("click", function() {
+            $("html,body").animate({
+                scrollTop: $("#next").offset().top - 50
+            }, 1000)
+        });
+    });
 }
 if(pagetag == 2){
     // 网站优化（SEO） 网站分析
@@ -534,7 +708,6 @@ if(pagetag == 6){
         slidesPerView: 'auto',
     });
 }
-
 
 /* 百度推送 */
 (function() {
