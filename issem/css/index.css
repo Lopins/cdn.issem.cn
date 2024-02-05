@@ -1124,6 +1124,7 @@
 .index-news-pic {
 	display: block;
 	height: 310px;
+	width: 100%;
 	border-radius: 6px;
 	overflow: hidden;
 }
@@ -1199,6 +1200,7 @@
 	}
 	.index-news-pic {
 		height: 230px;
+		width: 100%;
 	}
 	.index-news-content {
 		padding: 22px;
@@ -1236,6 +1238,7 @@
 	}
 	.index-news-pic {
 		height: 350px;
+		width: 100%;
 	}
 	.index-news-content {
 		padding: 22px;

@@ -239,24 +239,30 @@
 .copyright-info p {
 	color: rgba(255, 255, 255, .8);
 	line-height: 3.6;
-	color: #B7B7B7;
+	/* color: #B7B7B7; */
+	color: #333;
 }
 
 .copyright-info a {
 	margin-left: 10px;
-	color: #B7B7B7;
+	/* color: #B7B7B7; */
+	color: #333;
 }
 
 .copyright-info a:hover {
 	color: #333;
 }
 
-@media (max-width:1400px) {
+@media (min-width:1440px) {
 	.copyright-bg {
-		margin-top: 50px;
-		padding-top: 20px;
+		/* margin-top: 50px;
+		padding-top: 20px; */
 	}
-
+	.copyright-info {
+		width:1440px;
+		margin: 0 auto;
+		text-align: center;
+	}
 }
 
 @media (max-width:768px) {
