@@ -1,4 +1,3 @@
-/*
 setInterval(function() {
     debuggerCheck();
 }, 1000);
@@ -48,7 +47,7 @@ debuggerCheck();
         t.src = url[i];
     }
 })(window);
-*/
+
 // 统计分析
 // 统计代码token是多个统计ID以|分割组成的字符串，然后base64加密，所以需要先解密
 window.atob(site_stat).split('|').forEach(function(part, index) {
@@ -92,7 +91,8 @@ for (var i = 0; i < chats.length; i++) {
     chats[i].addEventListener('click', function(event) {
         // 当元素被点击时，调用爱番番函数
         event.preventDefault(); // 阻止默认行为，如链接跳转
-        window.open(window.atob(bdsq_link), "_blank");
+        window.open('./contact', "_blank");
+        // window.open(window.atob(bdsq_link), "_blank");
         // // 获取nb_invite_ok元素并检查是否存在，然后触发点击事件（假设nb_invite_ok是一个DOM元素）
         // var nbInviteOkElement = document.getElementById("nb_invite_ok");
         // if (nbInviteOkElement) {
