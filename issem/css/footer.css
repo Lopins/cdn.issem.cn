@@ -274,6 +274,7 @@
 @media (max-width:640px) {
 	.copyright-info {
 		width: 100%;
+		text-align: center;
 	}
 
 	.copyright-info p {

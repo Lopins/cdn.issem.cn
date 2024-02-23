@@ -1,0 +1,62 @@
+<html>
+<head>
+    <!-- Disable browser caching of dialog window -->
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <style type='text/css'>
+    body {
+        font-family: sans-serif;
+        font-size: 1.1em;
+        background-color: #F1F1F1;
+        color: #222;
+    }
+    .codeArea {
+        margin: 10px auto;
+        text-align: center;
+    }
+    textarea {
+        margin-top: 10px;
+        width: 100%;
+        height: 300px;
+    }
+    </style>
+    <script>
+    function htmlEntities(str) {
+        return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+ 
+    function InsertValue() {
+        codeNode = document.getElementById('code')
+        code = codeNode.value;
+        if(code == '') {codeNode.focus(); return;}
+        lang = document.getElementById('lang').value;
+        code = "<pre class=\"language-" + lang + "\"><code class=\"language-" + lang + "\">" + htmlEntities(code) + "</code></pre>";
+        window.parent.tinyMCE.activeEditor.execCommand('mceInsertContent', 0, code); //获取内容并插入到编辑器
+        window.parent.tinyMCE.activeEditor.windowManager.close(); //关闭对话框
+    }
+    </script>
+</head>
+<body>
+    <form onsubmit="InsertValue();return false;">
+        <div class="codeArea">
+            <label for="lang">代码语言</label>
+            <!--xhtml+css+clike+javascript+apacheconf+markdown+nginx+php+python+sql-->
+            <select id="lang">
+                <option value="php">php</option>
+                <option value="xhtml">xhtml</option>
+                <option value="css">css</option>
+                <option value="javascript">javascript</option>
+                <option value="markdown">markdown</option>
+                <option value="apacheconf">apacheconf</option>
+                <option value="sql">sql</option>
+                <option value="nginx">nginx</option>
+                <option value="python">python</option>
+            </select>
+            <textarea id="code" autofocus></textarea>
+            <p><input type="submit" value="完成" /></p>
+        </div>
+        
+    </form>
+</body>
+</html>

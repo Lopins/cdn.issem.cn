@@ -22,6 +22,8 @@ let businessSwiper = new Swiper('.index-business-swiper', {
 
 });
 
+
+
 var indexCaseBottom = new Swiper(".index-b2b-bottom", {
 	slidesPerView: 2,
 	spaceBetween: 20,
@@ -127,7 +129,6 @@ var indexCaseTop1 = new Swiper(".index-b2c-top", {
 		swiper: indexCaseBottom1
 	}
 });
-
 (function($) {
 	$(".index-case-thead ul li").eq(0).addClass("on");
 	$(".index-case-tbody .index-case-tbody-item").eq(0).show();
