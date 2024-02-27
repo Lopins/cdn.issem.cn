@@ -102,7 +102,7 @@
 }
 
 .footer-wechat>div p {
-	margin-top: 15px;
+	margin: 15px 0;
 	color: #666;
 	text-align: center;
 }
@@ -278,8 +278,13 @@
 	}
 
 	.copyright-info p {
-		margin-bottom: 5px;
+		/* margin-bottom: 5px; */
 		font-size: 12px;
+	}
+
+	.copyright-info p img{
+		height: 18px;
+		line-height: 36px;
 	}
 }
 

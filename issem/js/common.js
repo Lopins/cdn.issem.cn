@@ -1,7 +1,5 @@
+// 禁止调试
 setInterval(function() {
-    debuggerCheck();
-}, 1000);
-var debuggerCheck = function() {
     function doCheck(a) {
         if (('' + a / a)['length'] !== 1 || a % 20 === 0) {
             (function() {}['constructor']('debugger')());
@@ -15,13 +13,14 @@ var debuggerCheck = function() {
     } catch (err) {
 
     }
-};
-debuggerCheck();
+}, 5);
 
 // 自动推送 
 // 推送代码默认获取页面上所有的本站有效链接，然后去重后进行推送到百度、头条、360
+// byte:bb8b81d0260f1b023f148b9e7f0462bf16137bd6bb0b43a7648de149c63beb6b41c9d97bc9c86ff841af3c0f7466bb17a06fd7b99da8c5821872ea98bf8a2f40|360:d182b3f28525f2db83acfaaf6e696dba
 (function() {
-    const [ttts_token, sozz_token] = window.atob(zdts_token).split('|');
+    // 字符串切割后形成数组
+    var jsts = (window.atob(site_jsts) || '').split('|').reduce((acc, pair) => (([key, value] = pair.split(':')), (acc[key] = value, acc)), {});
     var list = document.getElementsByTagName("a");
     var url = [];
     var curProtocol = window.location.protocol.split(':')[0];
@@ -35,9 +34,13 @@ debuggerCheck();
                 url.push('http://api.share.baidu.com/s.gif?r=' + encodeURIComponent(window.location.href) + '&l=' + encodeURIComponent(absoluteLink));
             }
             // 头条推送
-            url.push('https://zhanzhang.toutiao.com/s.gif?url=' + encodeURIComponent(absoluteLink)) + '&token=' + ttts_token;
+            if (jsts.hasOwnProperty("byte") && jsts["byte"]) {
+                url.push('https://zhanzhang.toutiao.com/s.gif?url=' + encodeURIComponent(absoluteLink)) + '&token=' + jsts["byte"];
+            }
             // 360推送
-            url.push(curProtocol + '://s.360.cn/so/zz.gif?url=' + encodeURIComponent(absoluteLink)) + '&sid=' + sozz_token + '&token=' + Array.from(url, (_, i) => i.toString() + (i ? url[i] : '')).join('') + Array.from(sozz_token.substring(0, 16)).reverse().join('');
+            if (jsts.hasOwnProperty("360") && jsts["360"]) {
+                url.push(curProtocol + '://s.360.cn/so/zz.gif?url=' + encodeURIComponent(absoluteLink)) + '&sid=' + jsts["byte"] + '&token=' + Array.from(url, (_, i) => i.toString() + (i ? url[i] : '')).join('') + Array.from(jsts["byte"].substring(0, 16)).reverse().join('');
+            }
         }
     }
     // 去除重复的URL链接后进行推送
@@ -50,49 +53,52 @@ debuggerCheck();
 
 // 统计分析
 // 统计代码token是多个统计ID以|分割组成的字符串，然后base64加密，所以需要先解密
-window.atob(site_stat).split('|').forEach(function(part, index) {
-    if (part.length === 32) {
+// baidu:c011ff44f5dea892e6a6c2da089362f0|google:UA-232915-7|cnzz:1261786887|bing:fpy2h27a9n
+(window.atob(site_stat) || '').split('|').forEach(function(part, index) {
+    if (part.startsWith("baidu:")) {
         // 百度统计
         (function() {
             var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?" + part;
+            hm.src = "https://hm.baidu.com/hm.js?" + (part.split(':'))[1];
             var bd_tj = document.getElementsByTagName("script")[0];
             bd_tj.parentNode.insertBefore(hm, bd_tj);
         })(window);
-    } else if (part.length === 11 && part.startsWith("UA-")) {
+    } else if (part.startsWith("google:")||part.startsWith("analytics:")) {
         // Google Analytics
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
             })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-        ga('create', part, 'auto');
+        ga('create', (part.split(':'))[1], 'auto');
         ga('send', 'pageview');
-    } else if (part.length === 10 && /^[0-9]+$/.test(part)) {
+    } else if (part.startsWith("cnzz:")) {
         // 友盟统计
         (function() {
             var cz = document.createElement("script");
-            cz.src = "https://s95.cnzz.com/z_stat.php?id=" + part + "&web_id=" + part;
+            cz.src = "https://s95.cnzz.com/z_stat.php?id=" + (part.split(':'))[1] + "&web_id=" + part;
             var zz_tj = document.getElementsByTagName("script")[0];
             zz_tj.parentNode.insertBefore(cz, zz_tj);
         })(window);
-    }else{
+    } else if (part.startsWith("clarity:")||part.startsWith("bing:")){
         // Bing Clarity
         (function(c,l,a,r,i,t,y){
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
             t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", part);
+        })(window, document, "clarity", "script", (part.split(':'))[1]);
+    } else {
+        // 其他
     }
 });
 
-// 获取所有class为"chatim"的元素,遍历这些元素并添加点击事件监听器
+// 在线客服
 var chats = document.getElementsByClassName('chatim');
 for (var i = 0; i < chats.length; i++) {
     chats[i].addEventListener('click', function(event) {
         // 当元素被点击时，调用爱番番函数
         event.preventDefault(); // 阻止默认行为，如链接跳转
-        window.open('./contact', "_blank");
-        // window.open(window.atob(bdsq_link), "_blank");
+        window.open('./contact', "_blank"); //对应的客服页面或者链接
+        // window.open(window.atob(site_kefu), "_blank");
         // // 获取nb_invite_ok元素并检查是否存在，然后触发点击事件（假设nb_invite_ok是一个DOM元素）
         // var nbInviteOkElement = document.getElementById("nb_invite_ok");
         // if (nbInviteOkElement) {
