@@ -63,7 +63,7 @@ setInterval(function() {
             var bd_tj = document.getElementsByTagName("script")[0];
             bd_tj.parentNode.insertBefore(hm, bd_tj);
         })(window);
-    } else if (part.startsWith("google:")||part.startsWith("analytics:")) {
+    } else if (part.startsWith("google:")) {
         // Google Analytics
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -79,7 +79,7 @@ setInterval(function() {
             var zz_tj = document.getElementsByTagName("script")[0];
             zz_tj.parentNode.insertBefore(cz, zz_tj);
         })(window);
-    } else if (part.startsWith("clarity:")||part.startsWith("bing:")){
+    } else if (part.startsWith("clarity:")){
         // Bing Clarity
         (function(c,l,a,r,i,t,y){
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -87,7 +87,7 @@ setInterval(function() {
             y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
         })(window, document, "clarity", "script", (part.split(':'))[1]);
     } else {
-        // 其他
+        // 其他分析
     }
 });
 
