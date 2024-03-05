@@ -56,6 +56,9 @@ setInterval(function() {
 // baidu:c011ff44f5dea892e6a6c2da089362f0|google:UA-232915-7|cnzz:1261786887|bing:fpy2h27a9n
 (window.atob(site_stat) || '').split('|').forEach(function(part, index) {
     if (part.startsWith("baidu:")) {
+        var _hmt = _hmt || [];
+        // _hmt.push(['_setAutoPageview', false]);
+        // _hmt.push(['_trackPageview', '/']);
         // 百度统计
         (function() {
             var hm = document.createElement("script");
@@ -71,6 +74,12 @@ setInterval(function() {
             })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
         ga('create', (part.split(':'))[1], 'auto');
         ga('send', 'pageview');
+    } else if (part.startsWith("gtm:")) {
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer',(part.split(':'))[1]);
     } else if (part.startsWith("cnzz:")) {
         // 友盟统计
         (function() {
