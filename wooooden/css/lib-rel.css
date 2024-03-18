@@ -1,0 +1,25 @@
+﻿@media only screen and (max-width: 959px) {
+	.menu_first{background: url(../images/proclassicon.png) no-repeat 10px 12px;}
+	/*新增开始*/
+	#menu_first{background:url(../images/proclassicon2.png) no-repeat 10px 12px;}
+	/*新增结束*/
+	.list-news .date{background: #bf8643;}
+}
+@media only screen and (max-width: 767px) {
+	.nav dd{background: #bf8643;}
+	.nav li.on .v1{background: #bf8643;}
+	.nav li dd a{border-bottom: 1px solid #fff;}
+	.nav li a:hover,.nav dd a:hover{background:#bf8643;}
+	.ind-btn1{background: #bf8643;border-radius: 15px;}
+	.ind-search .sub{width: 20%;float: right;background-position: center center;background-color: #bf8643;}
+}
+@media only screen and (min-width: 767px){
+.ind-search .sub {
+    float: right;
+    width: 38px;
+    height: 28px;
+    color: rgb(136, 136, 136);
+    background: url(../images/ico-03.png) left no-repeat;
+}
+}
+

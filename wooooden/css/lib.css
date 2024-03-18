@@ -1,0 +1,97 @@
+﻿a{color: #666;}
+a:hover{color: #ad150a;}
+
+/*头部*/
+.head-nav{background: #bf8643;}
+.nav li a{color: #fff;}
+.nav li.on .v1,.nav li.ok .v1,.nav ul li .v1:hover{background: #ad150a;}/*新修改*/
+.nav li a:hover{background: #bf8643;}
+.nav dd{background-color:#bf8643;opacity: 0.80;filter: alpha(opacity=80);}/*新修改*/
+.nav dd a{color: #fff;}/*新修改*/
+.nav dd a:hover{background: #ad150a;}/*新修改*/
+.nav-phone{background: #bf8643;}
+/*.nav-phone li{border-top:1px #551663 solid;}*//*新修改*/
+.nav-phone li.on .v1{background: #bf8643;}
+.nav-phone dd{background: #ad150a;}/*新修改*/
+/*.nav-phone dd a{color: #f3e424;background:url(../images/mobile_nav_line.png) bottom center no-repeat;}*//*新修改*/
+
+.nav-phone{background: #bf8643;}
+.nav-phone li{border-top:1px #551663 solid;}
+.nav-phone li.on .v1{background: #bf8643;}
+.nav-phone dd{background:#bf8643;}
+.nav-phone dd a{color: #f3e424;background:url(../images/mobile_nav_line.png) bottom center no-repeat;}
+/*2021.4.2新增手机导航稍微修改一下*/
+.nav-phone2 li a{color:#413F3F;}
+.nav-phone2 dl a{color: #FFF;border-bottom: 1px #f5f5f51f solid;}
+.nav-phone2 li.on dl{background:#bf8643;opacity:0.7;}
+/*2021.4.2新增手机导航稍微修改一下*/
+
+/*首页轮播*/
+.index-banner .slick-dots li.slick-active button{background-color: #bf8643;}
+
+/*公用*/
+.topBar .fr a:hover{color:#bf8643;}
+.index--notice .tit{color: #bf8643;}
+.ind-search{background: #bf8643;}
+
+.ind-tit1 h3{color: #bf8643;}
+
+.ind-btn1{background: #bf8643;}
+.ind-btn1:hover{background: #ad150a;}
+
+.ind-dial{background: #ad150a;}
+
+/*底部*/
+.foot-nav{border-bottom: 1px solid #292929;}
+.foot{background: #333333;color: #bebebe;padding: 30px 0;}
+.foot a{color: #bebebe;}
+.foot a:hover{color: #eee;}
+.foot-nav li{border-right: 1px solid #bebebe;}
+.foot-nav li:last-child{border: none;}
+/*手机底部*/
+.phone-foot{background: #bf8643;}
+
+
+/*产品分类*/
+.ind-por-left .tit{background:#bf8643;}
+.menu_list{border:9px solid #bf8643;border-top:none;}
+.ind-por-right .inner-tit{background:url(../images/cpzstit.jpg) no-repeat left center;color: #000000;}
+.ind-por-right .inner-tit a:hover{color:#bf8643;}
+.menu_first{background:url(../images/proclassicon.png) no-repeat 20px 16px;border:1px solid #bfbfbf;}
+/*新增开始*/
+#menu_first{background:url(../images/proclassicon2.png) no-repeat 20px 16px;}
+/*新增结束*/
+.menu_first a{color: #010101;}/*已增加*/
+.menu_first a:hover{color: #bf8643;}/*已增加*/
+.menu_second a{background:url(../images/prolisticon.png) 27px 14px no-repeat;border-bottom:1px dashed #c4c4c4;color:#333;}
+.menu_second a:hover {color:#bf8643;}
+
+/*新闻中心*/
+.ind-tit1.news h3{border-bottom: 1px solid #bf8643;}
+.tab-news-tit li.hover,.tab-news-tit li .hover{border-color: #bf8643;color: #bf8643;}
+
+.list-news a:hover .date{background: #bf8643;}
+.list-news a:hover .date em{border-color: #bf8643;color: #bf8643;}
+
+/*内页style*/
+.phone-por-menu dt{background: #bf8643;}
+.phone-por-menu dl.on dt{background: #bf8643;}
+
+.m-message .btn{background: #bf8643;}
+.m-message .btn:hover{background: #ad150a;}
+
+.g-cont .cont-tit{background:#bf8643;}
+
+/*2019-3-25 main程序创建显示*/
+.page a{background: #bf8643;}
+.page a:hover,.page a.current{color: #fff;background-color:#ad150a;}
+.rides-cs {background:#bf8643;}
+.rides-cs a { color: #bf8643;}
+.rides-cs a:hover { color: #ad150a;}
+.rides-cs .cn ul li {border-bottom: solid 1px #bf8643;}
+.rides-cs ul li.top { border-bottom: solid #bf8643 1px;}
+a.titletool:hover,a.titletool:active{color:#bf8643;}
+
+
+
+
