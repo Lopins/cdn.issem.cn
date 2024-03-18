@@ -1,19 +1,19 @@
-// 禁止调试
-setInterval(function() {
-    function doCheck(a) {
-        if (('' + a / a)['length'] !== 1 || a % 20 === 0) {
-            (function() {}['constructor']('debugger')());
-        } else {
-            (function() {}['constructor']('debugger')());
-        }
-        doCheck(++a);
-    }
-    try {
-        doCheck(0);
-    } catch (err) {
+// // 禁止调试
+// setInterval(function() {
+//     function doCheck(a) {
+//         if (('' + a / a)['length'] !== 1 || a % 20 === 0) {
+//             (function() {}['constructor']('debugger')());
+//         } else {
+//             (function() {}['constructor']('debugger')());
+//         }
+//         doCheck(++a);
+//     }
+//     try {
+//         doCheck(0);
+//     } catch (err) {
 
-    }
-}, 5);
+//     }
+// }, 5);
 
 // 自动推送 
 // 推送代码默认获取页面上所有的本站有效链接，然后去重后进行推送到百度、头条、360
