@@ -73,7 +73,7 @@ a,a img,.ani{
 .logo{float: left;/*margin:25px 0 0 45px;*/margin:25px 0 0 0;}
 .logo img{height: 94px;max-height: 94px;}
 .head-top{overflow: hidden;line-height:60px;}
-.head-top.logo {float: left;}
+.head-top.logo {float: left; vertical-align: middle; height:50px}
 .head-top .phone{float: right;margin:42px 60px 0  0;}
 .head-top .phone img{max-height: 50px;}
 
