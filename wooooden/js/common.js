@@ -53,7 +53,7 @@
         $(this).attr('href',href);
     });
     $("ul.nav > li:nth-child(5) a").each(function(){
-        console.log(this)
+        // console.log(this)
         var href = $(this).attr("href");
         href=kufu_link[Math.floor(Math.random()*(kufu_link.length))]+'?ref='+href;
         $(this).attr('href',href);
