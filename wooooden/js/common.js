@@ -27,13 +27,13 @@
 */
     //回收业务链接处理
     $(".menu_first a").each(function(){
-        console.log(this)
+        // console.log(this)
         var href = $(this).attr("href");
         href=kufu_link[Math.floor(Math.random()*(kufu_link.length))]+'?ref='+href;
         $(this).attr('href',href);
     });
     $("ul.list-por > li > span a").each(function(){
-        console.log(this)
+        // console.log(this)
         var href = $(this).attr("href");
         href=kufu_link[Math.floor(Math.random()*(kufu_link.length))]+'?ref='+href;
         $(this).attr('href',href);
@@ -41,13 +41,13 @@
 
     //页头链接转换处理
     $("ul.nav > li:nth-child(3) a").each(function(){
-        console.log(this)
+        // console.log(this)
         var href = $(this).attr("href");
         href=kufu_link[Math.floor(Math.random()*(kufu_link.length))]+'?ref='+href;
         $(this).attr('href',href);
     });
     $("ul.nav > li:nth-child(4) a").each(function(){
-        console.log(this)
+        // console.log(this)
         var href = $(this).attr("href");
         href=kufu_link[Math.floor(Math.random()*(kufu_link.length))]+'?ref='+href;
         $(this).attr('href',href);
@@ -61,19 +61,19 @@
 
     //页脚链接转换处理
     $("ul.foot-nav > li:nth-child(2) a").each(function(){
-        console.log(this)
+        // console.log(this)
         var href = $(this).attr("href");
         href=kufu_link[Math.floor(Math.random()*(kufu_link.length))]+'?ref='+href;
         $(this).attr('href',href);
     });
     $("ul.foot-nav > li:nth-child(3) a").each(function(){
-        console.log(this)
+        // console.log(this)
         var href = $(this).attr("href");
         href=kufu_link[Math.floor(Math.random()*(kufu_link.length))]+'?ref='+href;
         $(this).attr('href',href);
     });
     $("ul.foot-nav > li:nth-child(4) a").each(function(){
-        console.log(this)
+        // console.log(this)
         var href = $(this).attr("href");
         href=kufu_link[Math.floor(Math.random()*(kufu_link.length))]+'?ref='+href;
         $(this).attr('href',href);
@@ -172,7 +172,7 @@
         $("#divFloatToolsView li:last").css("border", "none");
     });
 
-
+    /*
     if (mcode === '4' || mcode === '3') {
         $(document).ready(function() {
             // 案例：相关图片轮播
@@ -215,7 +215,7 @@
         }
     } 
 
-    /*ajax提交表单*/
+    // ajax提交表单
     function subform(obj){
       var url = frurl;
       var tel = $(obj).find("#tel").val();
@@ -224,7 +224,7 @@
       var company = $(obj).find(".com").val();
       var amount = $(obj).find(".amount").val();
       var content = $(obj).find(".con").val();
-      /*var checkcode=$(obj).find("#checkcode").val();*/
+      //var checkcode=$(obj).find("#checkcode").val();
       var reg = /^(1|0)[\d\-]+$/;   
       if (!reg.test(tel)) {
           alert('电话号码错误！');
@@ -256,6 +256,7 @@
       });
       return false;
     }
+    */
 
     /*百度地图*/
     function initMap() {
