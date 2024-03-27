@@ -14,7 +14,7 @@
 
 //     }
 // }, 5);
-
+/*
 // 自动推送 
 // 推送代码默认获取页面上所有的本站有效链接，然后去重后进行推送到百度、头条、360
 // byte:bb8b81d0260f1b023f148b9e7f0462bf16137bd6bb0b43a7648de149c63beb6b41c9d97bc9c86ff841af3c0f7466bb17a06fd7b99da8c5821872ea98bf8a2f40|360:d182b3f28525f2db83acfaaf6e696dba
@@ -99,7 +99,7 @@
         // 其他分析
     }
 });
-
+*/
 // 在线客服
 var chats = document.getElementsByClassName('chatim');
 for (var i = 0; i < chats.length; i++) {

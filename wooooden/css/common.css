@@ -73,7 +73,7 @@ a,a img,.ani{
 .logo{float: left;/*margin:25px 0 0 45px;*/margin:25px 0 0 0;}
 .logo img{height: 94px;max-height: 94px;}
 .head-top{overflow: hidden;line-height:60px;}
-.head-top.logo {float: left; vertical-align: middle; height:50px}
+.head-top.logo {float: left;}
 .head-top .phone{float: right;margin:42px 60px 0  0;}
 .head-top .phone img{max-height: 50px;}
 
@@ -311,7 +311,7 @@ body.open .menuBtn b{background: #eee;}
 .foot-nav{overflow: hidden;padding-bottom: 18px;padding-left: 120px;}
 .foot-nav li{float: left;width:11.11%;height: 16px;line-height: 16px; text-align: center;}
 .foot .txt{text-align: center;padding-top: 30px;line-height: 30px;}
-.foot .txt a{margin-right: 10px;}
+.foot .txt ul a{margin: 0 3.5px;}
 /*手机底部*/
 .phone-foot{display: none;position: fixed;bottom: 0;left: 0;width: 100%;height:55px;z-index:99999;}
 .phone-foot li{float: left;color: #fff;width: 20%;text-align: center;line-height: 20px;padding-top: 2px;}
@@ -346,12 +346,12 @@ filter: alpha(opacity=70);}
 .ind-por-left .ind-tit1 span,
 .ind-por-left .ind-tit1 h3{background: none;color: #fff;}
 @media only screen and (min-width: 1400px) {
-    .menu_list{padding:10px 20px;}
+    .menu_list{padding:10px 20px 90px;}
 }
 @media only screen and (max-width: 1200px){
     .menu_list{padding:10px 20px 20px;}
 }
-.menu_first {cursor:pointer;padding:0 15px 0 36px;height:44px;line-height:44px;margin:18px 0 8px 0;font-size:16px;overflow:hidden;}
+.menu_first {cursor:pointer;padding:0 15px 0 36px;height:44px;line-height:44px;margin:8px 0;font-size:16px;overflow:hidden;}
 
 .menu_second {height:auto;margin-bottom:4px;overflow:hidden;line-height:36px;display: none;}
 .menu_second a {display: block;padding:0 45px;height:36px;line-height:36px;display:block;
@@ -367,8 +367,8 @@ font-weight:normal;overflow:hidden;font-size:14px;}
 .ind-por-right .ind-tit1,.ind-por-right .ind-btn1{display: none;}
 .ind-por-right .list-por{padding-top: 30px;}
 .list-por{overflow: hidden;margin-left: -31px;}
-.list-por li{float: left;width: 32.5%;padding:0 0 15px 30px;}
-.list-por li .img{display: block;/*padding-top: 90%;*/ height: 300px;position: relative;border:1px solid #cfcfcf;}
+.list-por li{float: left;width: 33.333%;padding:0 0 15px 30px;}
+.list-por li .img{display: block;padding-top: 90%;position: relative;border:1px solid #cfcfcf;}
 .list-por li .img img{position: absolute;left: 0;top: 0;width: 100%;height: 100%;}
 .list-por li span{display: block; height:20px;line-height: 20px;margin: 10px 0 15px;text-align: center;font-size: 16px; overflow:hidden;}
 
@@ -397,11 +397,11 @@ font-weight:normal;overflow:hidden;font-size:14px;}
 
 
 /*工程案例*/
-.ind-case{padding: 50px 0 80px;}
-.ind-case .ind-tit1{padding-bottom: 20px;}
+/*.ind-case{padding: 50px 0 80px;}*/
+.ind-case .ind-tit1{padding-bottom: 40px;}
 
 .list-case{padding: 0px;}
-.list-case li{width: 25%;padding:0 10px;float: left;text-align: center;}
+.list-case li{width: 25%;/*padding:0 10px;*/float: left;text-align: center;}
 .list-case .pic{padding-top: 69.75%;position: relative;overflow: hidden;border:1px solid #ddd;}
 .list-case .pic img{position: absolute;left: 0;top: 0;width: 100%;height: 100%;}
 .list-case .pic img:hover{-webkit-transform: scale(1.05);

@@ -169,7 +169,7 @@ window.onload = function () {
         doreplace(tag, '万事亨通', '*');
         doreplace(tag, '抗生素', '*');
         doreplace(tag, '激素', '*');
-        doreplace(tag, '一站式', '*');
+        // doreplace(tag, '一站式', '*');
         doreplace(tag, '不可缺', '*');
         doreplace(tag, '极高', '*');
         doreplace(tag, '高效', '*');
